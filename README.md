@@ -34,7 +34,7 @@ In this step, you use a Dockerfile to build a Docker image onto the instance.
 
 1.  On the instance, create a file that contains the AWS Cloud9 SSH public key for the Docker container to use. To 	do this, in the same directory as the  `Dockerfile`  file, create a file named  `authorized_keys`, for example, by running the  **`touch`** command.
 
-			`sudo touch authorized_keys`
+	    `sudo touch authorized_keys`
 
 1.  Add the AWS Cloud9 SSH public key to the  `authorized_keys`  file. To get the AWS Cloud9 SSH public key, do the following:
     
@@ -71,11 +71,11 @@ In this step, you run a Docker container on the instance. This container is base
 	    `sudo docker run -d -it --expose 9090 -p 0.0.0.0:9090:22 -v {path to your workspace}:/home/ubuntu/workspace --name cloud9 cloud9-image:latest`
 2. Log in to the running container. To do this, run the  **`docker`** command with the  **`exec`** action and the following options.
 
-		`sudo docker exec -it cloud9 bash`
+	    `sudo docker exec -it cloud9 bash`
 
 3. Make a note of the path to the directory on the running container that contains the Node.js binary, as you'll need it for **Step 3: Create the Environment**. If you're not sure what this path is, run the following command on the running container to get it.
 
-		`which node`
+	    `which node`
 
 ## Step 3: Create the Environment
 
